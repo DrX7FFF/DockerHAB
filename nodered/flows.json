@@ -1,20 +1,5 @@
 [
     {
-        "id": "cd715a15d16c8c86",
-        "type": "tab",
-        "label": "Devel",
-        "disabled": true,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "579e5857.908308",
-        "type": "tab",
-        "label": "Test",
-        "disabled": true,
-        "info": ""
-    },
-    {
         "id": "999c2839b6eaba29",
         "type": "tab",
         "label": "Plantes",
@@ -63,8 +48,23 @@
         "id": "8426a808.9f7b08",
         "type": "tab",
         "label": "Surveillance",
-        "disabled": false,
+        "disabled": true,
         "info": ""
+    },
+    {
+        "id": "579e5857.908308",
+        "type": "tab",
+        "label": "Test",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "cd715a15d16c8c86",
+        "type": "tab",
+        "label": "Devel",
+        "disabled": true,
+        "info": "",
+        "env": []
     },
     {
         "id": "97858f04.731cd",
@@ -1458,1576 +1458,6 @@
             [],
             [],
             []
-        ]
-    },
-    {
-        "id": "5384d575f19f960f",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 46",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 860,
-        "wires": []
-    },
-    {
-        "id": "675cbc2852964777",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 47",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 1010,
-        "wires": []
-    },
-    {
-        "id": "a31bf06267065cbe",
-        "type": "deconz-input",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise1 SumConso",
-        "topic": "",
-        "config_version": 2,
-        "server": "98dc4fb5.8af9c",
-        "statustext": "",
-        "statustext_type": "default",
-        "search_type": "device",
-        "device_list": [
-            "sensors/uniqueid/a4:c1:38:e7:8d:90:37:8d-01-0702"
-        ],
-        "device_name": "",
-        "query": "{}",
-        "outputs": 1,
-        "output_rules": [
-            {
-                "type": "state",
-                "format": "single",
-                "output": "onchange",
-                "onstart": true,
-                "payload": [
-                    "consumption"
-                ],
-                "uniqueId": "ui-id-40"
-            }
-        ],
-        "x": 200,
-        "y": 900,
-        "wires": [
-            [
-                "5384d575f19f960f",
-                "5e2038ab9c8ed34c"
-            ]
-        ]
-    },
-    {
-        "id": "93ce462ce69f6229",
-        "type": "deconz-input",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 1 Conso",
-        "topic": "",
-        "config_version": 2,
-        "server": "98dc4fb5.8af9c",
-        "statustext": "",
-        "statustext_type": "default",
-        "search_type": "device",
-        "device_list": [
-            "sensors/uniqueid/a4:c1:38:e7:8d:90:37:8d-01-0b04"
-        ],
-        "device_name": "",
-        "query": "{}",
-        "outputs": 1,
-        "output_rules": [
-            {
-                "type": "state",
-                "format": "single",
-                "output": "onchange",
-                "onstart": true,
-                "payload": [
-                    "power"
-                ]
-            }
-        ],
-        "x": 180,
-        "y": 1050,
-        "wires": [
-            [
-                "675cbc2852964777",
-                "cfb7b4ffb50dcb0b"
-            ]
-        ]
-    },
-    {
-        "id": "5e2038ab9c8ed34c",
-        "type": "ui_chart",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "group": "53fd5e60a261c8c7",
-        "order": 0,
-        "width": "26",
-        "height": "10",
-        "label": "Consommation Cumulée",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 580,
-        "y": 900,
-        "wires": [
-            [
-                "d03530050dd20c33"
-            ]
-        ]
-    },
-    {
-        "id": "4252aeb47542e11c",
-        "type": "inject",
-        "z": "cd715a15d16c8c86",
-        "name": "OnStarting",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 770,
-        "wires": [
-            [
-                "3940bc2ee07fa07e"
-            ]
-        ]
-    },
-    {
-        "id": "bd56f8f157abfe02",
-        "type": "file in",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 1 Sum Conso",
-        "filename": "/data/chartdata/Prise1SumConso.json",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 200,
-        "y": 950,
-        "wires": [
-            [
-                "e1b4ed3bbc15fbd6"
-            ]
-        ]
-    },
-    {
-        "id": "e1b4ed3bbc15fbd6",
-        "type": "json",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 370,
-        "y": 950,
-        "wires": [
-            [
-                "5e2038ab9c8ed34c"
-            ]
-        ]
-    },
-    {
-        "id": "d03530050dd20c33",
-        "type": "file",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 1 Sum Conso",
-        "filename": "/data/chartdata/Prise1SumConso.json",
-        "filenameType": "str",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 810,
-        "y": 950,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "caa5ecc59facc39e",
-        "type": "file in",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 1 Conso",
-        "filename": "/data/chartdata/Prise1Conso.json",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 190,
-        "y": 1100,
-        "wires": [
-            [
-                "74f935542fd91a44"
-            ]
-        ]
-    },
-    {
-        "id": "74f935542fd91a44",
-        "type": "json",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 370,
-        "y": 1100,
-        "wires": [
-            [
-                "cfb7b4ffb50dcb0b"
-            ]
-        ]
-    },
-    {
-        "id": "905b5781157c6dc7",
-        "type": "file",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 1 Conso",
-        "filename": "/data/chartdata/Prise1Conso.json",
-        "filenameType": "str",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 770,
-        "y": 1100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cfb7b4ffb50dcb0b",
-        "type": "ui_chart",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "group": "53fd5e60a261c8c7",
-        "order": 0,
-        "width": "26",
-        "height": "10",
-        "label": "Consommation",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 560,
-        "y": 1050,
-        "wires": [
-            [
-                "905b5781157c6dc7"
-            ]
-        ]
-    },
-    {
-        "id": "3940bc2ee07fa07e",
-        "type": "link out",
-        "z": "cd715a15d16c8c86",
-        "name": "link out 2",
-        "mode": "link",
-        "links": [
-            "efa4d515c8427cca",
-            "6beb0a8a63a0bac3",
-            "f4b628e7e2b07f84",
-            "c0f2f4f298477c7d"
-        ],
-        "x": 215,
-        "y": 770,
-        "wires": []
-    },
-    {
-        "id": "efa4d515c8427cca",
-        "type": "link in",
-        "z": "cd715a15d16c8c86",
-        "name": "link in 2",
-        "links": [
-            "3940bc2ee07fa07e"
-        ],
-        "x": 65,
-        "y": 1100,
-        "wires": [
-            [
-                "caa5ecc59facc39e"
-            ]
-        ]
-    },
-    {
-        "id": "6beb0a8a63a0bac3",
-        "type": "link in",
-        "z": "cd715a15d16c8c86",
-        "name": "link in 3",
-        "links": [
-            "3940bc2ee07fa07e"
-        ],
-        "x": 65,
-        "y": 950,
-        "wires": [
-            [
-                "bd56f8f157abfe02"
-            ]
-        ]
-    },
-    {
-        "id": "7e14f5e8596f18eb",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 48",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 1170,
-        "wires": []
-    },
-    {
-        "id": "163a58b9bf8b2e0c",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 49",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "4285f977259892c4",
-        "type": "deconz-input",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise2 SumConso",
-        "topic": "Prise1",
-        "config_version": 2,
-        "server": "98dc4fb5.8af9c",
-        "statustext": "",
-        "statustext_type": "default",
-        "search_type": "device",
-        "device_list": [
-            "sensors/uniqueid/a4:c1:38:d6:d7:c6:db:f6-01-0702"
-        ],
-        "device_name": "",
-        "query": "{}",
-        "outputs": 1,
-        "output_rules": [
-            {
-                "type": "state",
-                "format": "single",
-                "output": "onchange",
-                "onstart": true,
-                "payload": [
-                    "consumption"
-                ],
-                "uniqueId": "ui-id-43"
-            }
-        ],
-        "x": 200,
-        "y": 1210,
-        "wires": [
-            [
-                "7e14f5e8596f18eb",
-                "6f01fdb6a4d341fa"
-            ]
-        ]
-    },
-    {
-        "id": "ac94755c47dd60ee",
-        "type": "deconz-input",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 2 Conso",
-        "topic": "",
-        "config_version": 2,
-        "server": "98dc4fb5.8af9c",
-        "statustext": "",
-        "statustext_type": "default",
-        "search_type": "device",
-        "device_list": [
-            "sensors/uniqueid/a4:c1:38:d6:d7:c6:db:f6-01-0b04"
-        ],
-        "device_name": "",
-        "query": "{}",
-        "outputs": 1,
-        "output_rules": [
-            {
-                "type": "state",
-                "format": "single",
-                "output": "onchange",
-                "onstart": true,
-                "payload": [
-                    "power"
-                ],
-                "uniqueId": "ui-id-44"
-            }
-        ],
-        "x": 180,
-        "y": 1360,
-        "wires": [
-            [
-                "163a58b9bf8b2e0c",
-                "a79404d6637ee5a2"
-            ]
-        ]
-    },
-    {
-        "id": "6f01fdb6a4d341fa",
-        "type": "ui_chart",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "group": "966da185446a8997",
-        "order": 0,
-        "width": "26",
-        "height": "10",
-        "label": "Consommation Cumulée",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 580,
-        "y": 1210,
-        "wires": [
-            [
-                "3f7a0fd4db5ee62e"
-            ]
-        ]
-    },
-    {
-        "id": "aedb521d475ddee9",
-        "type": "file in",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 2 Sum Conso",
-        "filename": "/data/chartdata/Prise2SumConso.json",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 200,
-        "y": 1260,
-        "wires": [
-            [
-                "2823cb04b107afe9"
-            ]
-        ]
-    },
-    {
-        "id": "2823cb04b107afe9",
-        "type": "json",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 370,
-        "y": 1260,
-        "wires": [
-            [
-                "6f01fdb6a4d341fa"
-            ]
-        ]
-    },
-    {
-        "id": "3f7a0fd4db5ee62e",
-        "type": "file",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 2 Sum Conso",
-        "filename": "/data/chartdata/Prise2SumConso.json",
-        "filenameType": "str",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 810,
-        "y": 1260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fb4a5e4b387e05b9",
-        "type": "file in",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 2 Conso",
-        "filename": "/data/chartdata/Prise2Conso.json",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 190,
-        "y": 1410,
-        "wires": [
-            [
-                "af2c0aa46a80e5be"
-            ]
-        ]
-    },
-    {
-        "id": "af2c0aa46a80e5be",
-        "type": "json",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 370,
-        "y": 1410,
-        "wires": [
-            [
-                "a79404d6637ee5a2"
-            ]
-        ]
-    },
-    {
-        "id": "f9facdda4da94b61",
-        "type": "file",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 2 Conso",
-        "filename": "/data/chartdata/Prise2Conso.json",
-        "filenameType": "str",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 770,
-        "y": 1410,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a79404d6637ee5a2",
-        "type": "ui_chart",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "group": "966da185446a8997",
-        "order": 0,
-        "width": "26",
-        "height": "10",
-        "label": "Consommation",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 560,
-        "y": 1360,
-        "wires": [
-            [
-                "f9facdda4da94b61"
-            ]
-        ]
-    },
-    {
-        "id": "f4b628e7e2b07f84",
-        "type": "link in",
-        "z": "cd715a15d16c8c86",
-        "name": "link in 4",
-        "links": [
-            "3940bc2ee07fa07e"
-        ],
-        "x": 65,
-        "y": 1410,
-        "wires": [
-            [
-                "fb4a5e4b387e05b9"
-            ]
-        ]
-    },
-    {
-        "id": "c0f2f4f298477c7d",
-        "type": "link in",
-        "z": "cd715a15d16c8c86",
-        "name": "link in 5",
-        "links": [
-            "3940bc2ee07fa07e"
-        ],
-        "x": 65,
-        "y": 1260,
-        "wires": [
-            [
-                "aedb521d475ddee9"
-            ]
-        ]
-    },
-    {
-        "id": "ee2879633d2f1352",
-        "type": "inject",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 260,
-        "y": 680,
-        "wires": [
-            [
-                "de912571315ed603"
-            ]
-        ]
-    },
-    {
-        "id": "de912571315ed603",
-        "type": "file in",
-        "z": "cd715a15d16c8c86",
-        "name": "Prise 1 Sum Conso",
-        "filename": "/data/chartdata/Prise2Conso.json",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 450,
-        "y": 680,
-        "wires": [
-            [
-                "b4a8642959a96a4b"
-            ]
-        ]
-    },
-    {
-        "id": "b4a8642959a96a4b",
-        "type": "json",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 630,
-        "y": 680,
-        "wires": [
-            [
-                "2c51623e2b21ad8d",
-                "26d369193dd0fe9f"
-            ]
-        ]
-    },
-    {
-        "id": "2c51623e2b21ad8d",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 51",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "c1c73a6982ce4f55",
-        "type": "csv",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 970,
-        "y": 790,
-        "wires": [
-            [
-                "896ae692b8d11cba",
-                "d2d07df82aa6525e"
-            ]
-        ]
-    },
-    {
-        "id": "26d369193dd0fe9f",
-        "type": "change",
-        "z": "cd715a15d16c8c86",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload[0].data[0]",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 830,
-        "y": 730,
-        "wires": [
-            [
-                "c1c73a6982ce4f55",
-                "449ad7a1087f210d"
-            ]
-        ]
-    },
-    {
-        "id": "449ad7a1087f210d",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 52",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "896ae692b8d11cba",
-        "type": "debug",
-        "z": "cd715a15d16c8c86",
-        "name": "debug 53",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 790,
-        "wires": []
-    },
-    {
-        "id": "d2d07df82aa6525e",
-        "type": "file",
-        "z": "cd715a15d16c8c86",
-        "name": "VaisselleW.csv",
-        "filename": "/data/chartdata/Prise2Conso 60deg.csv",
-        "filenameType": "str",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 1040,
-        "y": 850,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7f3bc15b.d90f7",
-        "type": "deconz-output",
-        "z": "579e5857.908308",
-        "name": "Globe",
-        "server": "98dc4fb5.8af9c",
-        "device_name": "Globe : Extended color light",
-        "device": "00:17:88:01:01:14:d5:57-0b",
-        "command": "on",
-        "commandType": "deconz_cmd",
-        "payload": "payload",
-        "payloadType": "msg",
-        "transitionTime": "",
-        "x": 490,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1e726d39.6dad73",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 90,
-        "y": 280,
-        "wires": [
-            [
-                "b23ae2b.26e332",
-                "5b6f38da.3f91b8"
-            ]
-        ]
-    },
-    {
-        "id": "f6728b2e.7fbd48",
-        "type": "function",
-        "z": "579e5857.908308",
-        "name": "",
-        "func": "msg.payload='{\"on\": true, \"hex\": #FF0000\"\", \"sat\":0, \"duration\":4000}' ;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 330,
-        "y": 100,
-        "wires": [
-            [
-                "7f3bc15b.d90f7"
-            ]
-        ]
-    },
-    {
-        "id": "27bc11a0.514b4e",
-        "type": "deconz-get",
-        "z": "579e5857.908308",
-        "name": "",
-        "server": "98dc4fb5.8af9c",
-        "device_name": "Globe : Extended color light",
-        "outputs": 1,
-        "device": "00:17:88:01:01:14:d5:57-0b",
-        "state": "0",
-        "x": 420,
-        "y": 440,
-        "wires": [
-            [
-                "3986b3d1.56fc5c"
-            ]
-        ]
-    },
-    {
-        "id": "3986b3d1.56fc5c",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 630,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "b23ae2b.26e332",
-        "type": "deconz-output",
-        "z": "579e5857.908308",
-        "name": "",
-        "server": "98dc4fb5.8af9c",
-        "device_name": "Globe : Extended color light",
-        "device": "00:17:88:01:01:14:d5:57-0b",
-        "command": "on",
-        "commandType": "deconz_cmd",
-        "payload": "payload",
-        "payloadType": "msg",
-        "transitionTime": "",
-        "x": 440,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a487d92c.a13328",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 90,
-        "y": 320,
-        "wires": [
-            [
-                "b23ae2b.26e332",
-                "5b6f38da.3f91b8"
-            ]
-        ]
-    },
-    {
-        "id": "93257a79.6f8f88",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 420,
-        "wires": [
-            [
-                "27bc11a0.514b4e"
-            ]
-        ]
-    },
-    {
-        "id": "5b6f38da.3f91b8",
-        "type": "delay",
-        "z": "579e5857.908308",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "100",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 230,
-        "y": 380,
-        "wires": [
-            [
-                "27bc11a0.514b4e"
-            ]
-        ]
-    },
-    {
-        "id": "aabc0441.04c6b8",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 90,
-        "y": 560,
-        "wires": [
-            [
-                "48f0557d.76f7ec",
-                "a3d80acd.0c3b48"
-            ]
-        ]
-    },
-    {
-        "id": "48f0557d.76f7ec",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 490,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "a3d80acd.0c3b48",
-        "type": "function",
-        "z": "579e5857.908308",
-        "name": "",
-        "func": "var msg1 = { payload: {}} ;\nvar msg2= { payload: {}} ;\nmsg1.payload={on:true};\nmsg2.payload={delay:5};\nreturn [msg1,msg2];",
-        "outputs": 2,
-        "noerr": 0,
-        "x": 230,
-        "y": 580,
-        "wires": [
-            [
-                "883d4c8c.38478",
-                "62fb5c40.315f14"
-            ],
-            [
-                "cd27e5b4.4a6c38",
-                "62fb5c40.315f14"
-            ]
-        ]
-    },
-    {
-        "id": "883d4c8c.38478",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 490,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "cd27e5b4.4a6c38",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 490,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "62fb5c40.315f14",
-        "type": "join",
-        "z": "579e5857.908308",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "1",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 350,
-        "y": 660,
-        "wires": [
-            [
-                "9021407f.94e99"
-            ]
-        ]
-    },
-    {
-        "id": "9021407f.94e99",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 490,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "2cdbb9e0.750ef6",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 890,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "e51558ad.bb86e8",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 890,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "aa71fec7.d484d",
-        "type": "deconz-input",
-        "z": "579e5857.908308",
-        "name": "CubePivot",
-        "topic": "",
-        "server": "98dc4fb5.8af9c",
-        "device_name": "Cube : ZHASwitch",
-        "outputs": 2,
-        "device": "00:15:8d:00:02:a7:25:8e-03-000c",
-        "state": "0",
-        "output": "always",
-        "outputAtStartup": true,
-        "x": 720,
-        "y": 320,
-        "wires": [
-            [
-                "2cdbb9e0.750ef6"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "bcd877e7.bd13a8",
-        "type": "deconz-input",
-        "z": "579e5857.908308",
-        "name": "CubeGeste",
-        "topic": "",
-        "server": "98dc4fb5.8af9c",
-        "device_name": "Cube : ZHASwitch",
-        "outputs": 2,
-        "device": "00:15:8d:00:02:a7:25:8e-02-0012",
-        "state": "0",
-        "output": "always",
-        "outputAtStartup": true,
-        "x": 710,
-        "y": 380,
-        "wires": [
-            [
-                "e51558ad.bb86e8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "18708fb5.b63b4",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 650,
-        "y": 60,
-        "wires": [
-            [
-                "6e4b15b0.cc012c"
-            ]
-        ]
-    },
-    {
-        "id": "6e4b15b0.cc012c",
-        "type": "deconz-output",
-        "z": "579e5857.908308",
-        "name": "Globe Switch",
-        "server": "98dc4fb5.8af9c",
-        "device_name": "Globe : Extended color light",
-        "device": "00:17:88:01:01:14:d5:57-0b",
-        "command": "on",
-        "commandType": "deconz_cmd",
-        "payload": "payload",
-        "payloadType": "msg",
-        "transitionTime": "",
-        "x": 810,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1f64b0d3.9ebeef",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 650,
-        "y": 100,
-        "wires": [
-            [
-                "6e4b15b0.cc012c"
-            ]
-        ]
-    },
-    {
-        "id": "76594e22.d2475",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 700,
-        "wires": [
-            [
-                "178381ac.0ae67e",
-                "119c9517.bec81b"
-            ]
-        ]
-    },
-    {
-        "id": "178381ac.0ae67e",
-        "type": "udp out",
-        "z": "579e5857.908308",
-        "name": "",
-        "addr": "localhost",
-        "iface": "",
-        "port": "8888",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "false",
-        "x": 310,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "119c9517.bec81b",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 290,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "fb680ff6.b615b",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 180,
-        "wires": [
-            [
-                "79bf642.add319c"
-            ]
-        ]
-    },
-    {
-        "id": "ea60de1b.f3faa",
-        "type": "csv",
-        "z": "579e5857.908308",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "x": 240,
-        "y": 170,
-        "wires": [
-            [
-                "dde5492d.ab1b78"
-            ]
-        ]
-    },
-    {
-        "id": "79bf642.add319c",
-        "type": "file",
-        "z": "579e5857.908308",
-        "name": "",
-        "filename": "\\\\192.168.1.112\\Share\\test.csv",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 320,
-        "y": 220,
-        "wires": [
-            [
-                "43b2f40.7a65b0c"
-            ]
-        ]
-    },
-    {
-        "id": "dde5492d.ab1b78",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 640,
-        "y": 170,
-        "wires": []
-    },
-    {
-        "id": "43b2f40.7a65b0c",
-        "type": "debug",
-        "z": "579e5857.908308",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 640,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "389ef484db9e7281",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 110,
-        "y": 880,
-        "wires": [
-            [
-                "7fadfce2dcb3714e",
-                "f326cc7467115251"
-            ]
-        ]
-    },
-    {
-        "id": "7fadfce2dcb3714e",
-        "type": "change",
-        "z": "579e5857.908308",
-        "d": true,
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "auto",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
-        "y": 880,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f326cc7467115251",
-        "type": "function",
-        "z": "579e5857.908308",
-        "name": "",
-        "func": "flow.set(\"auto\",msg.payload);\nnode.status({fill:flow.get(\"auto\")?\"green\":\"red\",shape:\"dot\",text:flow.get(\"auto\")});\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({fill:flow.get(\"auto\")?\"green\":\"red\",shape:\"dot\",text:flow.get(\"auto\")});\n",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 920,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "54b68bce633fdece",
-        "type": "inject",
-        "z": "579e5857.908308",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 110,
-        "y": 920,
-        "wires": [
-            [
-                "f326cc7467115251"
-            ]
         ]
     },
     {
@@ -11074,6 +9504,1576 @@
                 "c386718b.aa07f",
                 "2712d804.aa9d78"
             ]
+        ]
+    },
+    {
+        "id": "7f3bc15b.d90f7",
+        "type": "deconz-output",
+        "z": "579e5857.908308",
+        "name": "Globe",
+        "server": "98dc4fb5.8af9c",
+        "device_name": "Globe : Extended color light",
+        "device": "00:17:88:01:01:14:d5:57-0b",
+        "command": "on",
+        "commandType": "deconz_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "transitionTime": "",
+        "x": 490,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e726d39.6dad73",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "b23ae2b.26e332",
+                "5b6f38da.3f91b8"
+            ]
+        ]
+    },
+    {
+        "id": "f6728b2e.7fbd48",
+        "type": "function",
+        "z": "579e5857.908308",
+        "name": "",
+        "func": "msg.payload='{\"on\": true, \"hex\": #FF0000\"\", \"sat\":0, \"duration\":4000}' ;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "7f3bc15b.d90f7"
+            ]
+        ]
+    },
+    {
+        "id": "27bc11a0.514b4e",
+        "type": "deconz-get",
+        "z": "579e5857.908308",
+        "name": "",
+        "server": "98dc4fb5.8af9c",
+        "device_name": "Globe : Extended color light",
+        "outputs": 1,
+        "device": "00:17:88:01:01:14:d5:57-0b",
+        "state": "0",
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "3986b3d1.56fc5c"
+            ]
+        ]
+    },
+    {
+        "id": "3986b3d1.56fc5c",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 630,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b23ae2b.26e332",
+        "type": "deconz-output",
+        "z": "579e5857.908308",
+        "name": "",
+        "server": "98dc4fb5.8af9c",
+        "device_name": "Globe : Extended color light",
+        "device": "00:17:88:01:01:14:d5:57-0b",
+        "command": "on",
+        "commandType": "deconz_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "transitionTime": "",
+        "x": 440,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a487d92c.a13328",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "b23ae2b.26e332",
+                "5b6f38da.3f91b8"
+            ]
+        ]
+    },
+    {
+        "id": "93257a79.6f8f88",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 420,
+        "wires": [
+            [
+                "27bc11a0.514b4e"
+            ]
+        ]
+    },
+    {
+        "id": "5b6f38da.3f91b8",
+        "type": "delay",
+        "z": "579e5857.908308",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 380,
+        "wires": [
+            [
+                "27bc11a0.514b4e"
+            ]
+        ]
+    },
+    {
+        "id": "aabc0441.04c6b8",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "48f0557d.76f7ec",
+                "a3d80acd.0c3b48"
+            ]
+        ]
+    },
+    {
+        "id": "48f0557d.76f7ec",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 490,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a3d80acd.0c3b48",
+        "type": "function",
+        "z": "579e5857.908308",
+        "name": "",
+        "func": "var msg1 = { payload: {}} ;\nvar msg2= { payload: {}} ;\nmsg1.payload={on:true};\nmsg2.payload={delay:5};\nreturn [msg1,msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "883d4c8c.38478",
+                "62fb5c40.315f14"
+            ],
+            [
+                "cd27e5b4.4a6c38",
+                "62fb5c40.315f14"
+            ]
+        ]
+    },
+    {
+        "id": "883d4c8c.38478",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 490,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "cd27e5b4.4a6c38",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 490,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "62fb5c40.315f14",
+        "type": "join",
+        "z": "579e5857.908308",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "1",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 350,
+        "y": 660,
+        "wires": [
+            [
+                "9021407f.94e99"
+            ]
+        ]
+    },
+    {
+        "id": "9021407f.94e99",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 490,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2cdbb9e0.750ef6",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 890,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e51558ad.bb86e8",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 890,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "aa71fec7.d484d",
+        "type": "deconz-input",
+        "z": "579e5857.908308",
+        "name": "CubePivot",
+        "topic": "",
+        "server": "98dc4fb5.8af9c",
+        "device_name": "Cube : ZHASwitch",
+        "outputs": 2,
+        "device": "00:15:8d:00:02:a7:25:8e-03-000c",
+        "state": "0",
+        "output": "always",
+        "outputAtStartup": true,
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "2cdbb9e0.750ef6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bcd877e7.bd13a8",
+        "type": "deconz-input",
+        "z": "579e5857.908308",
+        "name": "CubeGeste",
+        "topic": "",
+        "server": "98dc4fb5.8af9c",
+        "device_name": "Cube : ZHASwitch",
+        "outputs": 2,
+        "device": "00:15:8d:00:02:a7:25:8e-02-0012",
+        "state": "0",
+        "output": "always",
+        "outputAtStartup": true,
+        "x": 710,
+        "y": 380,
+        "wires": [
+            [
+                "e51558ad.bb86e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "18708fb5.b63b4",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 650,
+        "y": 60,
+        "wires": [
+            [
+                "6e4b15b0.cc012c"
+            ]
+        ]
+    },
+    {
+        "id": "6e4b15b0.cc012c",
+        "type": "deconz-output",
+        "z": "579e5857.908308",
+        "name": "Globe Switch",
+        "server": "98dc4fb5.8af9c",
+        "device_name": "Globe : Extended color light",
+        "device": "00:17:88:01:01:14:d5:57-0b",
+        "command": "on",
+        "commandType": "deconz_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "transitionTime": "",
+        "x": 810,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f64b0d3.9ebeef",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 650,
+        "y": 100,
+        "wires": [
+            [
+                "6e4b15b0.cc012c"
+            ]
+        ]
+    },
+    {
+        "id": "76594e22.d2475",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 700,
+        "wires": [
+            [
+                "178381ac.0ae67e",
+                "119c9517.bec81b"
+            ]
+        ]
+    },
+    {
+        "id": "178381ac.0ae67e",
+        "type": "udp out",
+        "z": "579e5857.908308",
+        "name": "",
+        "addr": "localhost",
+        "iface": "",
+        "port": "8888",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "false",
+        "x": 310,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "119c9517.bec81b",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 290,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "fb680ff6.b615b",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "79bf642.add319c"
+            ]
+        ]
+    },
+    {
+        "id": "ea60de1b.f3faa",
+        "type": "csv",
+        "z": "579e5857.908308",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "x": 240,
+        "y": 170,
+        "wires": [
+            [
+                "dde5492d.ab1b78"
+            ]
+        ]
+    },
+    {
+        "id": "79bf642.add319c",
+        "type": "file",
+        "z": "579e5857.908308",
+        "name": "",
+        "filename": "\\\\192.168.1.112\\Share\\test.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "43b2f40.7a65b0c"
+            ]
+        ]
+    },
+    {
+        "id": "dde5492d.ab1b78",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 640,
+        "y": 170,
+        "wires": []
+    },
+    {
+        "id": "43b2f40.7a65b0c",
+        "type": "debug",
+        "z": "579e5857.908308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 640,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "389ef484db9e7281",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 110,
+        "y": 880,
+        "wires": [
+            [
+                "7fadfce2dcb3714e",
+                "f326cc7467115251"
+            ]
+        ]
+    },
+    {
+        "id": "7fadfce2dcb3714e",
+        "type": "change",
+        "z": "579e5857.908308",
+        "d": true,
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "auto",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f326cc7467115251",
+        "type": "function",
+        "z": "579e5857.908308",
+        "name": "",
+        "func": "flow.set(\"auto\",msg.payload);\nnode.status({fill:flow.get(\"auto\")?\"green\":\"red\",shape:\"dot\",text:flow.get(\"auto\")});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({fill:flow.get(\"auto\")?\"green\":\"red\",shape:\"dot\",text:flow.get(\"auto\")});\n",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54b68bce633fdece",
+        "type": "inject",
+        "z": "579e5857.908308",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 110,
+        "y": 920,
+        "wires": [
+            [
+                "f326cc7467115251"
+            ]
+        ]
+    },
+    {
+        "id": "5384d575f19f960f",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 46",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "675cbc2852964777",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 47",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 1010,
+        "wires": []
+    },
+    {
+        "id": "a31bf06267065cbe",
+        "type": "deconz-input",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise1 SumConso",
+        "topic": "",
+        "config_version": 2,
+        "server": "98dc4fb5.8af9c",
+        "statustext": "",
+        "statustext_type": "default",
+        "search_type": "device",
+        "device_list": [
+            "sensors/uniqueid/a4:c1:38:e7:8d:90:37:8d-01-0702"
+        ],
+        "device_name": "",
+        "query": "{}",
+        "outputs": 1,
+        "output_rules": [
+            {
+                "type": "state",
+                "format": "single",
+                "output": "onchange",
+                "onstart": true,
+                "payload": [
+                    "consumption"
+                ],
+                "uniqueId": "ui-id-40"
+            }
+        ],
+        "x": 200,
+        "y": 900,
+        "wires": [
+            [
+                "5384d575f19f960f",
+                "5e2038ab9c8ed34c"
+            ]
+        ]
+    },
+    {
+        "id": "93ce462ce69f6229",
+        "type": "deconz-input",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 1 Conso",
+        "topic": "",
+        "config_version": 2,
+        "server": "98dc4fb5.8af9c",
+        "statustext": "",
+        "statustext_type": "default",
+        "search_type": "device",
+        "device_list": [
+            "sensors/uniqueid/a4:c1:38:e7:8d:90:37:8d-01-0b04"
+        ],
+        "device_name": "",
+        "query": "{}",
+        "outputs": 1,
+        "output_rules": [
+            {
+                "type": "state",
+                "format": "single",
+                "output": "onchange",
+                "onstart": true,
+                "payload": [
+                    "power"
+                ]
+            }
+        ],
+        "x": 180,
+        "y": 1050,
+        "wires": [
+            [
+                "675cbc2852964777",
+                "cfb7b4ffb50dcb0b"
+            ]
+        ]
+    },
+    {
+        "id": "5e2038ab9c8ed34c",
+        "type": "ui_chart",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "group": "53fd5e60a261c8c7",
+        "order": 0,
+        "width": "26",
+        "height": "10",
+        "label": "Consommation Cumulée",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 580,
+        "y": 900,
+        "wires": [
+            [
+                "d03530050dd20c33"
+            ]
+        ]
+    },
+    {
+        "id": "4252aeb47542e11c",
+        "type": "inject",
+        "z": "cd715a15d16c8c86",
+        "name": "OnStarting",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 770,
+        "wires": [
+            [
+                "3940bc2ee07fa07e"
+            ]
+        ]
+    },
+    {
+        "id": "bd56f8f157abfe02",
+        "type": "file in",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 1 Sum Conso",
+        "filename": "/data/chartdata/Prise1SumConso.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 200,
+        "y": 950,
+        "wires": [
+            [
+                "e1b4ed3bbc15fbd6"
+            ]
+        ]
+    },
+    {
+        "id": "e1b4ed3bbc15fbd6",
+        "type": "json",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 950,
+        "wires": [
+            [
+                "5e2038ab9c8ed34c"
+            ]
+        ]
+    },
+    {
+        "id": "d03530050dd20c33",
+        "type": "file",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 1 Sum Conso",
+        "filename": "/data/chartdata/Prise1SumConso.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 810,
+        "y": 950,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caa5ecc59facc39e",
+        "type": "file in",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 1 Conso",
+        "filename": "/data/chartdata/Prise1Conso.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 190,
+        "y": 1100,
+        "wires": [
+            [
+                "74f935542fd91a44"
+            ]
+        ]
+    },
+    {
+        "id": "74f935542fd91a44",
+        "type": "json",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 1100,
+        "wires": [
+            [
+                "cfb7b4ffb50dcb0b"
+            ]
+        ]
+    },
+    {
+        "id": "905b5781157c6dc7",
+        "type": "file",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 1 Conso",
+        "filename": "/data/chartdata/Prise1Conso.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 770,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cfb7b4ffb50dcb0b",
+        "type": "ui_chart",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "group": "53fd5e60a261c8c7",
+        "order": 0,
+        "width": "26",
+        "height": "10",
+        "label": "Consommation",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 1050,
+        "wires": [
+            [
+                "905b5781157c6dc7"
+            ]
+        ]
+    },
+    {
+        "id": "3940bc2ee07fa07e",
+        "type": "link out",
+        "z": "cd715a15d16c8c86",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "efa4d515c8427cca",
+            "6beb0a8a63a0bac3",
+            "f4b628e7e2b07f84",
+            "c0f2f4f298477c7d"
+        ],
+        "x": 215,
+        "y": 770,
+        "wires": []
+    },
+    {
+        "id": "efa4d515c8427cca",
+        "type": "link in",
+        "z": "cd715a15d16c8c86",
+        "name": "link in 2",
+        "links": [
+            "3940bc2ee07fa07e"
+        ],
+        "x": 65,
+        "y": 1100,
+        "wires": [
+            [
+                "caa5ecc59facc39e"
+            ]
+        ]
+    },
+    {
+        "id": "6beb0a8a63a0bac3",
+        "type": "link in",
+        "z": "cd715a15d16c8c86",
+        "name": "link in 3",
+        "links": [
+            "3940bc2ee07fa07e"
+        ],
+        "x": 65,
+        "y": 950,
+        "wires": [
+            [
+                "bd56f8f157abfe02"
+            ]
+        ]
+    },
+    {
+        "id": "7e14f5e8596f18eb",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 48",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1170,
+        "wires": []
+    },
+    {
+        "id": "163a58b9bf8b2e0c",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 49",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "4285f977259892c4",
+        "type": "deconz-input",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise2 SumConso",
+        "topic": "Prise1",
+        "config_version": 2,
+        "server": "98dc4fb5.8af9c",
+        "statustext": "",
+        "statustext_type": "default",
+        "search_type": "device",
+        "device_list": [
+            "sensors/uniqueid/a4:c1:38:d6:d7:c6:db:f6-01-0702"
+        ],
+        "device_name": "",
+        "query": "{}",
+        "outputs": 1,
+        "output_rules": [
+            {
+                "type": "state",
+                "format": "single",
+                "output": "onchange",
+                "onstart": true,
+                "payload": [
+                    "consumption"
+                ],
+                "uniqueId": "ui-id-43"
+            }
+        ],
+        "x": 200,
+        "y": 1210,
+        "wires": [
+            [
+                "7e14f5e8596f18eb",
+                "6f01fdb6a4d341fa"
+            ]
+        ]
+    },
+    {
+        "id": "ac94755c47dd60ee",
+        "type": "deconz-input",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 2 Conso",
+        "topic": "",
+        "config_version": 2,
+        "server": "98dc4fb5.8af9c",
+        "statustext": "",
+        "statustext_type": "default",
+        "search_type": "device",
+        "device_list": [
+            "sensors/uniqueid/a4:c1:38:d6:d7:c6:db:f6-01-0b04"
+        ],
+        "device_name": "",
+        "query": "{}",
+        "outputs": 1,
+        "output_rules": [
+            {
+                "type": "state",
+                "format": "single",
+                "output": "onchange",
+                "onstart": true,
+                "payload": [
+                    "power"
+                ],
+                "uniqueId": "ui-id-44"
+            }
+        ],
+        "x": 180,
+        "y": 1360,
+        "wires": [
+            [
+                "163a58b9bf8b2e0c",
+                "a79404d6637ee5a2"
+            ]
+        ]
+    },
+    {
+        "id": "6f01fdb6a4d341fa",
+        "type": "ui_chart",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "group": "966da185446a8997",
+        "order": 0,
+        "width": "26",
+        "height": "10",
+        "label": "Consommation Cumulée",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 580,
+        "y": 1210,
+        "wires": [
+            [
+                "3f7a0fd4db5ee62e"
+            ]
+        ]
+    },
+    {
+        "id": "aedb521d475ddee9",
+        "type": "file in",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 2 Sum Conso",
+        "filename": "/data/chartdata/Prise2SumConso.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 200,
+        "y": 1260,
+        "wires": [
+            [
+                "2823cb04b107afe9"
+            ]
+        ]
+    },
+    {
+        "id": "2823cb04b107afe9",
+        "type": "json",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 1260,
+        "wires": [
+            [
+                "6f01fdb6a4d341fa"
+            ]
+        ]
+    },
+    {
+        "id": "3f7a0fd4db5ee62e",
+        "type": "file",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 2 Sum Conso",
+        "filename": "/data/chartdata/Prise2SumConso.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 810,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb4a5e4b387e05b9",
+        "type": "file in",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 2 Conso",
+        "filename": "/data/chartdata/Prise2Conso.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 190,
+        "y": 1410,
+        "wires": [
+            [
+                "af2c0aa46a80e5be"
+            ]
+        ]
+    },
+    {
+        "id": "af2c0aa46a80e5be",
+        "type": "json",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 1410,
+        "wires": [
+            [
+                "a79404d6637ee5a2"
+            ]
+        ]
+    },
+    {
+        "id": "f9facdda4da94b61",
+        "type": "file",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 2 Conso",
+        "filename": "/data/chartdata/Prise2Conso.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 770,
+        "y": 1410,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a79404d6637ee5a2",
+        "type": "ui_chart",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "group": "966da185446a8997",
+        "order": 0,
+        "width": "26",
+        "height": "10",
+        "label": "Consommation",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 1360,
+        "wires": [
+            [
+                "f9facdda4da94b61"
+            ]
+        ]
+    },
+    {
+        "id": "f4b628e7e2b07f84",
+        "type": "link in",
+        "z": "cd715a15d16c8c86",
+        "name": "link in 4",
+        "links": [
+            "3940bc2ee07fa07e"
+        ],
+        "x": 65,
+        "y": 1410,
+        "wires": [
+            [
+                "fb4a5e4b387e05b9"
+            ]
+        ]
+    },
+    {
+        "id": "c0f2f4f298477c7d",
+        "type": "link in",
+        "z": "cd715a15d16c8c86",
+        "name": "link in 5",
+        "links": [
+            "3940bc2ee07fa07e"
+        ],
+        "x": 65,
+        "y": 1260,
+        "wires": [
+            [
+                "aedb521d475ddee9"
+            ]
+        ]
+    },
+    {
+        "id": "ee2879633d2f1352",
+        "type": "inject",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 680,
+        "wires": [
+            [
+                "de912571315ed603"
+            ]
+        ]
+    },
+    {
+        "id": "de912571315ed603",
+        "type": "file in",
+        "z": "cd715a15d16c8c86",
+        "name": "Prise 1 Sum Conso",
+        "filename": "/data/chartdata/Prise2Conso.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 450,
+        "y": 680,
+        "wires": [
+            [
+                "b4a8642959a96a4b"
+            ]
+        ]
+    },
+    {
+        "id": "b4a8642959a96a4b",
+        "type": "json",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 630,
+        "y": 680,
+        "wires": [
+            [
+                "2c51623e2b21ad8d",
+                "26d369193dd0fe9f"
+            ]
+        ]
+    },
+    {
+        "id": "2c51623e2b21ad8d",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c1c73a6982ce4f55",
+        "type": "csv",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 970,
+        "y": 790,
+        "wires": [
+            [
+                "896ae692b8d11cba",
+                "d2d07df82aa6525e"
+            ]
+        ]
+    },
+    {
+        "id": "26d369193dd0fe9f",
+        "type": "change",
+        "z": "cd715a15d16c8c86",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload[0].data[0]",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 730,
+        "wires": [
+            [
+                "c1c73a6982ce4f55",
+                "449ad7a1087f210d"
+            ]
+        ]
+    },
+    {
+        "id": "449ad7a1087f210d",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "896ae692b8d11cba",
+        "type": "debug",
+        "z": "cd715a15d16c8c86",
+        "name": "debug 53",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 790,
+        "wires": []
+    },
+    {
+        "id": "d2d07df82aa6525e",
+        "type": "file",
+        "z": "cd715a15d16c8c86",
+        "name": "VaisselleW.csv",
+        "filename": "/data/chartdata/Prise2Conso 60deg.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1040,
+        "y": 850,
+        "wires": [
+            []
         ]
     },
     {
