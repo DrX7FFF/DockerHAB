@@ -1,2 +1,5 @@
 /nodered/.*
-
+/deconz/zcldb.txt
+/nodered/chartdata
+/nodered/node_modules
+/nodered/package-lock.json

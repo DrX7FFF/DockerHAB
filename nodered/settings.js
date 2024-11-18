@@ -168,6 +168,7 @@ module.exports = {
      * If set to false, this is disabled.
      */
     //httpAdminRoot: '/admin',
+    httpAdminRoot: '/admin',
 
     /** The following property can be used to add a custom middleware function
      * in front of all admin http routes. For example, to set custom http
@@ -342,6 +343,11 @@ module.exports = {
     //        module:"localfilesystem"
     //    },
     //},
+    contextStorage: {
+          default: "memory",
+          memory: { module: 'memory' },
+          file: { module: 'localfilesystem' }
+    },
 
     /** `global.keys()` returns a list of all properties set in global context.
      * This allows them to be displayed in the Context Sidebar within the editor.
@@ -527,6 +533,7 @@ module.exports = {
      *  ioMiddleware:{function or array}, (socket,next) - socket.io middleware
      */
     //ui: { path: "ui" },
+    ui: { path: "" },
 
     /** Colourise the console output of the debug node */
     //debugUseColors: true,
