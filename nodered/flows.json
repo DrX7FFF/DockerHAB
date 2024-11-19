@@ -1,5 +1,13 @@
 [
     {
+        "id": "c5f3c1417595d04c",
+        "type": "tab",
+        "label": "Firebase",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "999c2839b6eaba29",
         "type": "tab",
         "label": "Plantes",
@@ -1198,15 +1206,28 @@
         ],
         "order": 1,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
-        "id": "181a5ecb0dfa964d",
+        "id": "1450e0140a3f1b0d",
+        "type": "firebase-config",
+        "name": "HAB DataLog",
+        "authType": "anonymous",
+        "claims": {},
+        "createUser": false,
+        "status": {
+            "firestore": false,
+            "storage": false
+        },
+        "useClaims": false
+    },
+    {
+        "id": "20020005c6448949",
         "type": "ui-group",
-        "name": "Group 1",
+        "name": "Group Name",
         "page": "f247df7b555b654f",
-        "width": 4,
+        "width": "12",
         "height": "1",
         "order": 1,
         "showTitle": true,
@@ -1214,6 +1235,17 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
+    },
+    {
+        "id": "09bc1d83d894a4fa",
+        "type": "ui-link",
+        "name": "Link 1",
+        "ui": "8e8fe4e157122b8c",
+        "path": "/",
+        "icon": "home",
+        "order": 2,
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "8ca6330edfa414bc",
@@ -1458,6 +1490,49 @@
             [],
             [],
             []
+        ]
+    },
+    {
+        "id": "94e63bd71a9154ae",
+        "type": "firebase-out",
+        "z": "c5f3c1417595d04c",
+        "name": "",
+        "database": "1450e0140a3f1b0d",
+        "path": "RDdata/timestamp",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "set",
+        "x": 550,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1852c67ca4f14845",
+        "type": "inject",
+        "z": "c5f3c1417595d04c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "94e63bd71a9154ae"
+            ]
         ]
     },
     {
@@ -5149,7 +5224,7 @@
         "type": "debug",
         "z": "26dfe9b1.bda826",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5642,7 +5717,7 @@
         "type": "debug",
         "z": "26dfe9b1.bda826",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6046,12 +6121,14 @@
             [
                 "5c8ee34a8e35ac52",
                 "7ca9ee38804584a6",
-                "281a31025b82a0a3"
+                "281a31025b82a0a3",
+                "fdd4512f837b711f"
             ],
             [
                 "b316cfd48a235206",
                 "30b28fa91d55c089",
-                "19b66fefe8bb484d"
+                "19b66fefe8bb484d",
+                "fdd4512f837b711f"
             ],
             [
                 "30b28fa91d55c089",
@@ -6060,7 +6137,8 @@
             [
                 "e494c87156bd5101",
                 "7ca9ee38804584a6",
-                "281a31025b82a0a3"
+                "281a31025b82a0a3",
+                "fdd4512f837b711f"
             ],
             [
                 "322fc6ef8d29bf17"
@@ -6068,12 +6146,14 @@
             [
                 "f5643d52a4808a1d",
                 "7ca9ee38804584a6",
-                "281a31025b82a0a3"
+                "281a31025b82a0a3",
+                "fdd4512f837b711f"
             ],
             [
                 "d4e1f00ea0a5381b",
                 "7ca9ee38804584a6",
-                "281a31025b82a0a3"
+                "281a31025b82a0a3",
+                "fdd4512f837b711f"
             ],
             [
                 "c5731ae20601fe57",
@@ -6106,7 +6186,9 @@
         "wires": [
             [
                 "1d72944e08f69a67",
-                "61e5a5b585a3fec3"
+                "61e5a5b585a3fec3",
+                "dd9ffba6c3790799",
+                "5fecd3e565785093"
             ]
         ]
     },
@@ -6559,6 +6641,229 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "28d8145c1c7a5daf",
+        "type": "firebase-out",
+        "z": "8d2da763.b1b5d8",
+        "name": "",
+        "database": "1450e0140a3f1b0d",
+        "path": "Dehumidifier",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "update",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "dd9ffba6c3790799",
+        "type": "function",
+        "z": "8d2da763.b1b5d8",
+        "name": "function 5",
+        "func": "var temp = msg.payload;\nvar date = new Date();\ntemp['datetime'] = date.getTime();\n\ndate = new Date(date.getTime()- date.getTimezoneOffset()*60000);\n\nmsg.payload = { };\nmsg.payload[date.toISOString().split('.')[0]] = temp;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 200,
+        "wires": [
+            [
+                "28d8145c1c7a5daf"
+            ]
+        ]
+    },
+    {
+        "id": "3b1b324a18fe0cde",
+        "type": "inject",
+        "z": "8d2da763.b1b5d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 940,
+        "wires": [
+            [
+                "f581bde213803e19"
+            ]
+        ]
+    },
+    {
+        "id": "f581bde213803e19",
+        "type": "firebase-get",
+        "z": "8d2da763.b1b5d8",
+        "name": "",
+        "constraints": {
+            "startAt": {
+                "value": "2024-11-18T22:10:00",
+                "key": "",
+                "types": {
+                    "value": "str",
+                    "child": "str"
+                }
+            },
+            "orderByKey": null
+        },
+        "database": "1450e0140a3f1b0d",
+        "outputType": "json",
+        "passThrough": false,
+        "path": "Dehumidifier",
+        "pathType": "str",
+        "useConstraints": true,
+        "x": 310,
+        "y": 940,
+        "wires": [
+            [
+                "cb5fff6dcad4b67a"
+            ]
+        ]
+    },
+    {
+        "id": "cb5fff6dcad4b67a",
+        "type": "debug",
+        "z": "8d2da763.b1b5d8",
+        "name": "debug 83",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "36c27fe6bdb387ce",
+        "type": "firebase-out",
+        "z": "8d2da763.b1b5d8",
+        "name": "",
+        "database": "1450e0140a3f1b0d",
+        "path": "Dehumidifier2",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "update",
+        "x": 530,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5fecd3e565785093",
+        "type": "function",
+        "z": "8d2da763.b1b5d8",
+        "name": "function 6",
+        "func": "var temp = msg.payload;\nvar date = new Date();\ntemp['datetime'] = date.getTime();\n\nmsg.payload = { };\nmsg.payload[temp['datetime']] = temp;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "36c27fe6bdb387ce"
+            ]
+        ]
+    },
+    {
+        "id": "fdd4512f837b711f",
+        "type": "ui-chart",
+        "z": "8d2da763.b1b5d8",
+        "group": "20020005c6448949",
+        "name": "",
+        "label": "chart",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "HH:mm",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "12",
+        "height": "10",
+        "className": "",
+        "interpolation": "linear",
+        "x": 750,
+        "y": 780,
+        "wires": [
+            [
+                "03a534be59f1423b"
+            ]
+        ]
+    },
+    {
+        "id": "03a534be59f1423b",
+        "type": "debug",
+        "z": "8d2da763.b1b5d8",
+        "name": "debug 84",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 780,
+        "wires": []
     },
     {
         "id": "73440d53fd56ad30",
@@ -9079,7 +9384,7 @@
         "type": "debug",
         "z": "3d8b03d0.c5d9dc",
         "name": "debug 78",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
