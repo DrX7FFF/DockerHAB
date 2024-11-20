@@ -6819,8 +6819,7 @@
         "y": 740,
         "wires": [
             [
-                "36c27fe6bdb387ce",
-                "cc25fa3323bdbc6c"
+                "36c27fe6bdb387ce"
             ],
             [
                 "8638eb2db616e6f6",
@@ -6837,7 +6836,7 @@
         "type": "function",
         "z": "8d2da763.b1b5d8",
         "name": "function 7",
-        "func": "var date = new Date();\nmsg = {payload : {begin : (date.getTime() - 3*60*60000).toString()}}; //60s\nreturn msg;",
+        "func": "var date = new Date();\nmsg = {payload : {begin : (date.getTime() - 8*60*60000).toString()}}; //60s\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -7137,31 +7136,15 @@
         "type": "debug",
         "z": "8d2da763.b1b5d8",
         "name": "debug 88",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "cc25fa3323bdbc6c",
-        "type": "debug",
-        "z": "8d2da763.b1b5d8",
-        "name": "debug 89",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 780,
+        "x": 740,
+        "y": 940,
         "wires": []
     },
     {
@@ -7169,7 +7152,7 @@
         "type": "debug",
         "z": "8d2da763.b1b5d8",
         "name": "debug 90",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
