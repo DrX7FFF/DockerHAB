@@ -1224,7 +1224,7 @@
         "ui": "8e8fe4e157122b8c",
         "path": "/original",
         "icon": "home",
-        "order": 4,
+        "order": 5,
         "visible": "true",
         "disabled": "false"
     },
@@ -1351,6 +1351,56 @@
         "className": "",
         "visible": true,
         "disabled": false
+    },
+    {
+        "id": "ad3f056cd4901b44",
+        "type": "ui-page",
+        "name": "Admin",
+        "ui": "8e8fe4e157122b8c",
+        "path": "/admin",
+        "icon": "admin",
+        "layout": "grid",
+        "theme": "5075a7d8e4947586",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "01f229163d63a638",
+        "type": "ui-group",
+        "name": "NodeRed Backup",
+        "page": "ad3f056cd4901b44",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "8ca6330edfa414bc",
@@ -9710,6 +9760,7 @@
         "id": "6661fbdd9ceda6f4",
         "type": "inject",
         "z": "b7adaecd52f8a9e1",
+        "d": true,
         "name": "Données simulées",
         "props": [],
         "repeat": "5",
@@ -10015,6 +10066,335 @@
         ]
     },
     {
+        "id": "0392a12cbbbcc875",
+        "type": "ui-text-input",
+        "z": "03db7e0460f2bfdd",
+        "group": "01f229163d63a638",
+        "name": "Commit Comment",
+        "label": "Commit Comment",
+        "order": 1,
+        "width": "5",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": false,
+        "sendOnEnter": false,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": true,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "74b7dcac4b1fa98c",
+                "980ea35a9e1a9681"
+            ]
+        ]
+    },
+    {
+        "id": "eeac3fafca8fd206",
+        "type": "ui-button",
+        "z": "03db7e0460f2bfdd",
+        "group": "01f229163d63a638",
+        "name": "SaveBtn",
+        "label": "Save",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "Save",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 80,
+        "y": 360,
+        "wires": [
+            [
+                "7b028621a51abefb"
+            ]
+        ]
+    },
+    {
+        "id": "b04d8cecb1586dab",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 105",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "74b7dcac4b1fa98c",
+        "type": "function",
+        "z": "03db7e0460f2bfdd",
+        "name": "function 19",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "b04d8cecb1586dab"
+            ]
+        ]
+    },
+    {
+        "id": "980ea35a9e1a9681",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 107",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7b028621a51abefb",
+        "type": "change",
+        "z": "03db7e0460f2bfdd",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 420,
+        "wires": [
+            [
+                "0392a12cbbbcc875"
+            ]
+        ]
+    },
+    {
+        "id": "ca84138f077d1177",
+        "type": "ui-form",
+        "z": "03db7e0460f2bfdd",
+        "name": "",
+        "group": "01f229163d63a638",
+        "label": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Commit Comment",
+                "key": "Comment",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Comment": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "51d916dfb7ca14b4"
+            ]
+        ]
+    },
+    {
+        "id": "51d916dfb7ca14b4",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 108",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "75fc6da8451eb5e8",
+        "type": "exec",
+        "z": "03db7e0460f2bfdd",
+        "command": "git --version",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 290,
+        "y": 620,
+        "wires": [
+            [
+                "2a9418ea6f286fc9"
+            ],
+            [
+                "41f93be460c2e01c"
+            ],
+            [
+                "cad0468ffef26120"
+            ]
+        ]
+    },
+    {
+        "id": "68ce91d960c9abbf",
+        "type": "inject",
+        "z": "03db7e0460f2bfdd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "pwd",
+        "payloadType": "str",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "75fc6da8451eb5e8",
+                "365953a142247d94"
+            ]
+        ]
+    },
+    {
+        "id": "2a9418ea6f286fc9",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 109",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "41f93be460c2e01c",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 110",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cad0468ffef26120",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 111",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "365953a142247d94",
+        "type": "debug",
+        "z": "03db7e0460f2bfdd",
+        "name": "debug 112",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 760,
+        "wires": []
+    },
+    {
         "id": "c386718b.aa07f",
         "type": "function",
         "z": "8426a808.9f7b08",
@@ -10042,6 +10422,7 @@
         "z": "8426a808.9f7b08",
         "name": "",
         "filename": "/data/mylog.txt",
+        "filenameType": "str",
         "appendNewline": true,
         "createDir": true,
         "overwriteFile": "false",
